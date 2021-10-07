@@ -23,3 +23,10 @@ tests/testthat/rlreport_files
 *annotated_peaks.csv
 *broadPeak
 *.bed
+docs/
+doc/
+README.md
+RLSeq.Rproj
+.github
+_pkgdown.yml
+
