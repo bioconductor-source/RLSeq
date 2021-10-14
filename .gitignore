@@ -24,3 +24,11 @@ tests/testthat/rlreport_files
 logo.png
 *.bed
 misc/
+.github/
+doc/
+docs/
+tests/
+Meta/
+pkgdown/
+RLSeq.Rproj
+_pkgdown.yml
