@@ -26,7 +26,6 @@ misc/
 .github/
 doc/
 docs/
-tests/
 Meta/
 pkgdown/
 RLSeq.Rproj
