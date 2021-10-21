@@ -21,7 +21,6 @@ tests/testthat/rlreport.html
 tests/testthat/rlreport_files
 *report.html
 *annotated_peaks.csv
-logo.png
 *.bed
 misc/
 doc/
@@ -31,3 +30,10 @@ RLSeq.Rproj
 _pkgdown.yml
 pkgdown/
 .github/
+.github/
+doc/
+docs/
+Meta/
+pkgdown/
+RLSeq.Rproj
+_pkgdown.yml
