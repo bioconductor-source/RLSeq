@@ -7,12 +7,27 @@
     # Data
     utils::data("auxdata", package = "RLSeq", envir = parent.env(environment()))
     utils::data(
-        "genomeMasks", 
-        package = "RLSeq", 
+        "genomeMasks",
+        package = "RLSeq",
         envir = parent.env(environment())
     )
     utils::data(
         "available_genomes",
+        package = "RLSeq",
+        envir = parent.env(environment())
+    )
+    utils::data(
+        "rlsampleTxOl",
+        package = "RLSeq",
+        envir = parent.env(environment())
+    )
+    utils::data(
+        "randomWindows",
+        package = "RLSeq",
+        envir = parent.env(environment())
+    )
+    utils::data(
+        "rlbaseNoiseAnalyze",
         package = "RLSeq",
         envir = parent.env(environment())
     )

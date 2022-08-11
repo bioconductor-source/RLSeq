@@ -1,4 +1,4 @@
-#' This script is used to generate auxdatailiary information used by 
+#' This script is used to generate auxdatailiary information used by
 #' RLSeq and RLBase.
 #' This includes color pallets, metadata, and other small items.
 #' The result is a named list which RLSeq depends upon.
@@ -37,8 +37,10 @@ genomes <- available_genomes %>%
 
 # Get the available modes (no bisulfite currently supported)
 available_modes <- rlsamples %>%
-    dplyr::select(mode, family, ip_type, strand_specific, moeity,
-                  bisulfite_seq) %>%
+    dplyr::select(
+        mode, family, ip_type, strand_specific, moeity,
+        bisulfite_seq
+    ) %>%
     distinct()
 
 
@@ -64,6 +66,16 @@ db_cols <- tibble(
     col = sample(pal_db, length(unique(annotypes$db)))
 )
 
+## Prediction_Label colors ##
+cols <- dplyr::tribble(
+    ~cond, ~col,
+    "NEG_NEG", "#8a2c2c",
+    "NEG_POS", "#A76767",
+    "POS_NEG", "#7aa4c4",
+    "POS_POS", "#2270ab"
+)
+pred_lab_cols <- cols %>% dplyr::pull(.data$col)
+names(pred_lab_cols) <- as.data.frame(cols)[, "cond"]
 
 ## S9.6 vs dRNaseH1 vs Other ##
 ip_cols <- tribble(
@@ -85,10 +97,10 @@ modes <- unique(rlsamples$mode)
 misc <- names(which(table(rlsamples$mode) <= 12))
 set.seed(6)
 mode_cols <- tibble(
-    mode = sample(modes[! modes %in% misc], size = length(modes[! modes %in% misc])),
+    mode = sample(modes[!modes %in% misc], size = length(modes[!modes %in% misc])),
     col = gg_color_hue(
         length(
-            modes[! modes %in% misc]
+            modes[!modes %in% misc]
         )
     )
 )
@@ -129,10 +141,9 @@ auxdata <- list(
     heat_cols = heatcols,
     label_cols = label_cols,
     prediction_cols = prediction_cols,
+    prediction_label_cols = pred_lab_cols,
     available_modes = available_modes,
     available_genomes = genomes,
     misc_modes = misc
 )
 usethis::use_data(auxdata, overwrite = TRUE, compress = "xz")
-
-
