@@ -1,7 +1,7 @@
 Package: RLSeq
 Type: Package
 Title: RLSeq: An analysis package for R-loop mapping data
-Version: 1.9.0
+Version: 1.9.1
 Authors@R: c(
     person(given = "Henry",
            family = "Miller",
@@ -92,3 +92,4 @@ biocViews: Sequencing, Coverage, Epigenetics, Transcriptomics, Classification
 URL: https://github.com/Bishop-Laboratory/RLSeq, https://bishop-laboratory.github.io/RLSeq/
 BugReports: https://github.com/Bishop-Laboratory/RLSeq/issues
 BiocType: Software
+PackageStatus: Deprecated
